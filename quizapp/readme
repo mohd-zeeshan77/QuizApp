@@ -46,3 +46,54 @@ A **Spring Boot Quiz Application** that allows users to take quizzes on various 
 ```bash
 git clone https://github.com/mohd-zeeshan77/QuizApp.git
 cd QuizApp
+
+
+## Configure the Application
+In application.properties file
+spring.datasource.url=jdbc:mysql://localhost:3306/quiz_app
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+
+## Project Structure
+quiz-application
+│
+├── src/main/java/com/example/quizapp
+│   ├── controller        # REST Controllers for APIs
+│   ├── dto               # Data Transfer Objects (UserDTO, etc.)
+│   ├── entity            # Entity Classes (User, Quiz, Question, etc.)
+│   ├── exception         # Custom Exceptions (e.g., UserAlreadyExistsException)
+│   ├── repository        # JPA Repositories
+│   ├── security          # JWT Configuration (filters, utils)
+│   ├── service           # Business Logic Layer
+│   └── QuizAppApplication.java   # Main Application Class
+│
+├── src/main/resources
+│   ├── application.properties  # Spring Boot Configuration
+│   └── schema.sql              # (Optional) SQL for initializing tables
+│
+├── pom.xml               # Maven Configuration
+└── README.md             # Project Documentation
+
+## API Endpoints
+
+# Authentication
+Method	Endpoint	Description	Authorization
+POST	/api/auth/register	User Registration	None
+POST	/api/auth/login	User Login (returns JWT token)	None
+# User Management
+Method	Endpoint	Description	Authorization
+GET	/api/users	Get All Users (Admin)	Admin
+GET	/api/users/{id}	Get User by ID	Admin/User
+# Quiz Management
+Method	Endpoint	Description	Authorization
+POST	/api/quizzes	Create a Quiz (Admin)	Admin
+GET	/api/quizzes	Get All Quizzes	Any
+GET	/api/quizzes/{id}	Get Quiz by ID	Any
+PUT	/api/quizzes/{id}	Update Quiz (Admin)	Admin
+DELETE	/api/quizzes/{id}	Delete Quiz (Admin)	Admin
+POST	/api/quizzes/{id}/submit	Submit Answers and Get Feedback	User
