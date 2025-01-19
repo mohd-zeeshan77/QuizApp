@@ -1,0 +1,48 @@
+# Quiz Application
+
+A **Spring Boot Quiz Application** that allows users to take quizzes on various topics. The application supports user management (registration, login), JWT-based authentication, quiz creation, and performance tracking. It integrates with a MySQL database for persistent storage.
+
+---
+
+## Features
+
+- User Management:
+  - User Registration
+  - User Login (with JWT Authentication)
+  - Admin and User Roles
+- Quizzes:
+  - Multiple-choice questions
+  - Create, Read, Update, and Delete (CRUD) for quizzes
+  - Feedback and performance tracking
+- JWT Authentication for secured endpoints
+- MySQL Database Integration
+- Fully Tested using JUnit and Spring Boot Test Framework
+
+---
+
+## Technology Stack
+
+- **Backend**: Spring Boot (Java)
+- **Database**: MySQL
+- **Authentication**: JWT (JSON Web Tokens)
+- **Dependencies**: Maven
+- **Testing**: JUnit 5, Spring Boot Test
+
+---
+
+## Prerequisites
+
+- **Java Development Kit (JDK)**: 17+
+- **MySQL Server**: Ensure MySQL is running on your system
+- **Maven**: Build tool to manage dependencies
+- **Postman**: For testing REST APIs (Optional)
+- **Lombok Plugin**: Ensure Lombok is installed in your IDE (like Eclipse or IntelliJ)
+
+---
+
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/mohd-zeeshan77/QuizApp.git
+cd QuizApp
